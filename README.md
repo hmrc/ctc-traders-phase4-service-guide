@@ -1,4 +1,4 @@
-# Technical Documentation - Common Transit Convention Traders Service Guide
+# Technical Documentation - CTC Traders phase 4 service guide
 
 ## Getting started
 
