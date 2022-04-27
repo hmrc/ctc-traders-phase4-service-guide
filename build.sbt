@@ -1,6 +1,6 @@
 import uk.gov.hmrc.sbtdistributables.SbtDistributablesPlugin.publishingSettings
 
-val appName = "common-transit-convention-traders-service-guide"
+val appName = "ctc-traders-phase4-service-guide"
 
 lazy val microservice = Project(appName, file("."))
   .enablePlugins(play.sbt.PlayScala, SbtAutoBuildPlugin, SbtGitVersioning, SbtDistributablesPlugin)
