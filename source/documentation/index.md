@@ -1,10 +1,10 @@
 ---
-title: Common Transit Convention Traders Service Guide
+title: CTC Traders phase 4 service guide
 weight: 1
 description: Software developers, designers, product owners or business analysts. Integrate your software with Common Transit Convention Traders API.
 ---
 
-# Common Transit Convention Traders API Service guide
+# CTC Traders phase 4 service guide
 
 ##Useful CTC Page Links
 [CTC Traders API Roadmap](https://developer.service.hmrc.gov.uk/roadmaps/common-transit-convention-traders-roadmap/)
