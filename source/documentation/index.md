@@ -7,11 +7,11 @@ description: Software developers, designers, product owners or business analysts
 # CTC Traders phase 4 service guide
 
 ##Useful CTC Page Links
-[CTC Traders API Roadmap](https://developer.service.hmrc.gov.uk/roadmaps/common-transit-convention-traders-roadmap/)
+[CTC Traders API Roadmap](/roadmaps/common-transit-convention-traders-roadmap/)
 
-[CTC Traders API Documentation](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/common-transit-convention-traders/1.0)
+[CTC Traders API Documentation](/api/service/common-transit-convention-traders/1.0)
 
-[CTC Traders API Testing Guide](https://developer.service.hmrc.gov.uk/guides/common-transit-convention-traders-testing-guide/)
+[CTC Traders API Testing Guide](/guides/ctc-traders-phase4-testing-guide/)
 
 ##Introduction
 This guide explains how to use the Common Transit Convention (CTC) Traders API with your software.
@@ -45,15 +45,15 @@ You must note that:
 
 3. The TIS is tailored more towards the legacy systems and not the CTC Traders API, but you must still understand its contents.
 
-[Mapping Document](https://developer.service.hmrc.gov.uk/guides/common-transit-convention-traders-testing-guide/figures/xml-2-edifact-mapping-updated12112020.pdf)
+[Mapping Document](/guides/ctc-traders-phase4-testing-guide/figures/xml-2-edifact-mapping-updated12112020.pdf)
 
 A guide for converting EDIFACT to XML movement messages.
 
-[CTC Traders API Definition](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/common-transit-convention-traders/1.0)
+[CTC Traders API Definition](/api/service/common-transit-convention-traders/1.0)
 
 A page of endpoints and error messages needed to retrieve or handle messages sent to or from the offices of departure and destination.
 
-[CTC Guide to Testing](https://developer.service.hmrc.gov.uk/guides/common-transit-convention-traders-testing-guide/)
+[CTC Guide to Testing](/guides/ctc-traders-phase4-testing-guide/)
 
 A step-by-step guide to test your software.
 
@@ -81,7 +81,7 @@ These steps must be followed before you can use your software in the live enviro
 7. **Create** [test users](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/api-platform-test-user/1.0) before you can test your application.
 8. **Download** reference data to get Customs Offices List (COL) data to use for testing. Visit the [EU’s reference data download page](https://ec.europa.eu/taxation_customs/dds2/rd/rd_download_home.jsp?Lang=en) to download reference data.
 9. **Test** your application in the sandbox environment by following the steps in our [Guide to Testing](https://developer.service.hmrc.gov.uk/guides/common-transit-convention-traders-testing-guide/).
-10. **Complete** the [Application for Productions Checklist](https://developer.service.hmrc.gov.uk/guides/common-transit-convention-traders-testing-guide/figures/CTC_Traders_API_Application_for_Productions_Credentials.docx) form.
+10. **Complete** the [Application for Productions Checklist](/guides/ctc-traders-phase4-testing-guide/figures/CTC_Traders_API_Application_for_Productions_Credentials.docx) form.
 11. **Apply** for production credentials through your [developer account](https://developer.service.hmrc.gov.uk/developer/login) before you go live.
 12. **Get your customers ready** by asking them to apply for an [EORI number](https://www.gov.uk/eori) and a [Government Gateway account](https://www.gov.uk/log-in-register-hmrc-online-services).
 
@@ -270,7 +270,7 @@ See some examples below.
 
 
 ##Clarifications and omissions
-It should be noted there  are some known omissions which are detailed in the [mapping document](https://developer.service.hmrc.gov.uk/guides/common-transit-convention-traders-testing-guide/figures/xml-2-edifact-mapping-updated12112020.pdf). These include :
+It should be noted there are some known omissions which are detailed in the [mapping document](/guides/ctc-traders-phase4-testing-guide/figures/xml-2-edifact-mapping-updated12112020.pdf). These include :
 
 `NumOfLoaLisHEA304` has been included in error in:
 
@@ -303,7 +303,7 @@ Our system will automatically insert a default guarantee amount of 10,000 Euros 
 
 **Rate limits**
 
-Our API Platform’s standard rate limit is [3 requests per second](https://developer.service.hmrc.gov.uk/api-documentation/docs/reference-guide#rate-limiting). If you need a higher rate limit, you must give us more information about data and limit forecasts when filling in the [Application for Production Credentials checklist](https://developer.service.hmrc.gov.uk/guides/common-transit-convention-traders-testing-guide/figures/CTC_Traders_API_Application_for_Productions_Credentials.docx) form.
+Our API Platform’s standard rate limit is [3 requests per second](https://developer.service.hmrc.gov.uk/api-documentation/docs/reference-guide#rate-limiting). If you need a higher rate limit, you must give us more information about data and limit forecasts when filling in the [Application for Production Credentials checklist](/guides/ctc-traders-phase4-testing-guide/figures/CTC_Traders_API_Application_for_Productions_Credentials.docx) form.
 
 **Data cap and using filters**
 
@@ -348,11 +348,11 @@ You should also note:
  - the push notification will have a field called messageURI which will contain the relative path to the full XML message
  - for messages larger than 100KB you must use the URI to download the XML message from the CTC Traders API
  
-For more information on how to configure and test this functionality follow the step by step instructions in our [Guide to Testing](https://developer.service.hmrc.gov.uk/guides/common-transit-convention-traders-testing-guide/).
+For more information on how to configure and test this functionality follow the step by step instructions in our [Guide to Testing](/guides/ctc-traders-phase4-testing-guide/).
 
 ##For legacy users migrating to XML
 
-If you are still using EDIFACT, you will need to know how to translate from EDIFACT to XML. We’ve created a [mapping document](https://developer.service.hmrc.gov.uk/guides/common-transit-convention-traders-testing-guide/figures/xml-2-edifact-mapping-updated12112020.pdf) to show you how to convert EDIFACT and XML versions of movement messages into the other format of messages. This will help you get ready to use our CTC Traders API.
+If you are still using EDIFACT, you will need to know how to translate from EDIFACT to XML. We’ve created a [mapping document](/guides/ctc-traders-phase4-testing-guide/figures/xml-2-edifact-mapping-updated12112020.pdf) to show you how to convert EDIFACT and XML versions of movement messages into the other format of messages. This will help you get ready to use our CTC Traders API.
 
 ###Comparison between the existing and the new API
 
@@ -407,6 +407,6 @@ Email us your questions to [SDSTeam@hmrc.gov.uk](mailto:SDSTeam@hmrc.gov.uk). We
 
 **Useful Links**
 
- - [CTC Traders API service roadmap](https://developer.service.hmrc.gov.uk/roadmaps/common-transit-convention-traders-roadmap/)
- - [CTC Traders API documentation](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/common-transit-convention-traders/1.0)
- - [CTC Traders API Testing Guide](https://developer.service.hmrc.gov.uk/guides/common-transit-convention-traders-testing-guide/)
+ - [CTC Traders API service roadmap](/roadmaps/common-transit-convention-traders-roadmap/)
+ - [CTC Traders API documentation](/api-documentation/docs/api/service/common-transit-convention-traders/1.0)
+ - [CTC Traders API Testing Guide](/guides/ctc-traders-phase4-testing-guide/)
