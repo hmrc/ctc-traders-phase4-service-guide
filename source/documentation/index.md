@@ -270,7 +270,7 @@ See some examples below.
 
 
 ##Clarifications and omissions
-It should be noted there  are some known omissions which are detailed in the [mapping document](/guides/ctc-traders-phase4-testing-guide/figures/xml-2-edifact-mapping-updated12112020.pdf). These include :
+It should be noted there are some known omissions which are detailed in the [mapping document](/guides/ctc-traders-phase4-testing-guide/figures/xml-2-edifact-mapping-updated12112020.pdf). These include :
 
 `NumOfLoaLisHEA304` has been included in error in:
 
