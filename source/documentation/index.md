@@ -9,7 +9,7 @@ description: Software developers, designers, product owners or business analysts
 ##Useful CTC Page Links
 [CTC Traders API Roadmap](/roadmaps/common-transit-convention-traders-roadmap/)
 
-[CTC Traders API Documentation](/api/service/common-transit-convention-traders/1.0)
+[CTC Traders API Documentation](/api-documentation/docs/api/service/common-transit-convention-traders/1.0)
 
 [CTC Traders API Testing Guide](/guides/ctc-traders-phase4-testing-guide/)
 
