@@ -3,12 +3,12 @@ host: docs.developer.service.hmrc.gov.uk
 
 # Header-related options
 show_govuk_logo: true
-service_name: HMRC Developer Hub 
-service_link: https://developer.service.hmrc.gov.uk/
+service_name: CTC Traders phase 4 service guide 
+service_link: /guides/ctc-traders-phase4-service-guide/
 
 # Links to show on right-hand-side of header
 header_links:
-  CTC Traders phase 4 service guide: /guides/ctc-traders-phase4-service-guide/
+  HMRC Developer Hub: https://developer.service.hmrc.gov.uk/
   Documentation: /api-documentation/docs/using-the-hub
   Applications: /developer/applications
   Support: /developer/support
