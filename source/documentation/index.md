@@ -49,7 +49,7 @@ You must note that:
 
 A guide for converting EDIFACT to XML movement messages.
 
-[CTC Traders API Definition](/api/service/common-transit-convention-traders/1.0)
+[CTC Traders API Definition](/api-documentation/docs/api/service/common-transit-convention-traders/1.0)
 
 A page of endpoints and error messages needed to retrieve or handle messages sent to or from the offices of departure and destination.
 
