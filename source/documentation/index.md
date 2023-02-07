@@ -6,25 +6,31 @@ description: Software developers, designers, product owners or business analysts
 
 # CTC Traders phase 4 service guide
 
-## Useful CTC Page Links
-[CTC Traders API Roadmap](/roadmaps/common-transit-convention-traders-roadmap/)
+Learn how to use [CTC Traders API v1.0](/api-documentation/docs/api/service/common-transit-convention-traders/1.0) with your software.
 
-[CTC Traders API Documentation](/api-documentation/docs/api/service/common-transit-convention-traders/1.0)
+## API overview
 
-[CTC Traders API Testing Guide](/guides/ctc-traders-phase4-testing-guide/)
+The CTC Traders API is based on REST principles with endpoints that return data in JSON format and it uses standard HTTP error response codes.
 
-## Introduction
-This guide explains how to use the Common Transit Convention (CTC) Traders API with your software.
+Use the CTC Traders API to:
 
-The CTC Traders API allows traders to send and receive arrival and departure movements to and from the New Computerised Transit System (NCTS) for Great Britain and Northern Ireland.
+- send departure and arrival movement notifications to the New Computerised Transit System (NCTS)
+- retrieve messages sent from customs offices of departure and destination
 
-## Quick Links
+The API endpoints relate only to Great Britain and Northern Ireland. You can also use the HMRC sandbox environment to run tests for Great Britain and Northern Ireland transit movements.
+
+## API status
+
+This version of the CTC Traders API supports only NCTS phase 4. [CTC Traders API v2.0](/api-documentation/docs/api/service/common-transit-convention-traders/2.0) supports only NCTS phase 5.
+
+## Quick start
 To make this easier for you, these are the main developer files you need:
 
  - [XSD zip file](/figures/ctc-traders-api-xsds.zip) (file unzips and downloads)
  - [Postman collections of example API calls and cURL commands](https://github.com/hmrc/common-transit-convention-traders-postman). If you want to use the XML directly, you can extract these from the Postman collections link.
 
-## Essential Reading
+## Essential reading
+
 Before starting, you must read:
 
 [New Computerised Transit System: technical interface specifications (TIS)](https://www.gov.uk/government/publications/new-computerised-transit-system-technical-specifications) 
@@ -49,10 +55,6 @@ You must note that:
 
 A guide for converting EDIFACT to XML movement messages.
 
-[CTC Traders API Definition](/api-documentation/docs/api/service/common-transit-convention-traders/1.0)
-
-A page of endpoints and error messages needed to retrieve or handle messages sent to or from the offices of departure and destination.
-
 [CTC Guide to Testing](/guides/ctc-traders-phase4-testing-guide/)
 
 A step-by-step guide to test your software.
@@ -65,10 +67,18 @@ A guide to register for your user account to access the Developer Hub.
 
 Guidance on using the Developer Hub and GitHub. Including end points, access tokens and GET requests.
 
+[CTC Traders API Roadmap](/roadmaps/common-transit-convention-traders-roadmap/)
+
+Review information about CTC Traders API releases.
+
+[CTC Traders API v1.0 reference](/api-documentation/docs/api/service/common-transit-convention-traders/1.0/oas/page)
+
+Learn about API endoints and error messages needed to retrieve or handle messages sent to or from the offices of departure and destination.
+
 
 ***
 
-## Getting Started
+## Getting started
 
 These steps must be followed before you can use your software in the live environment and access our live API:
 
@@ -103,7 +113,64 @@ They will also need to provide:
 * email address 
 * contact details
 
-## Message Flow Diagrams
+## Percent-encoding of parameters in request URLs
+
+When writing code to use date filters in request URLs, you must always use percent-encoding to avoid getting 400 Bad Request errors. This is because some common characters used in dates and timestamps cannot be used in URLs.
+
+### Format
+
+When formatting query parameters into a request URL for date and time filtering functionality, you must use only the [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) standard for the date and time. For example, the timestamp `2021-06-21T09:00+00:00` should be encoded as `2021-06-21T09%3A00%2B00%3A00`. For more information about this, see our [Reference guide](/api-documentation/docs/reference-guide#common-data-types).
+
+You should also note the following:
+
+ - some common data types described in our [Reference guide](/api-documentation/docs/reference-guide#common-data-types) contain characters that are not valid for use in URLs
+ - some software libraries and frameworks do percent-encoding for you automatically
+
+### Examples
+
+Below are examples in different programming languages.
+
+#### Java
+
+```java
+java.net.URLEncoder.encode("2021-04-30T16:08:31+00:00");
+```
+
+#### Python
+
+```python
+from urllib.parse import quote
+
+quote('2021-04-30T16:08:31+00:00')
+```
+
+#### C# #
+
+```c#
+Uri.EscapeDataString("2021-04-30T16:08:31+00:00");
+```
+
+### **Find out more**
+
+For background information about percent-encoding, we recommend the following:
+
+ - [RFC](https://datatracker.ietf.org/doc/html/rfc3986)
+ - [Wikipedia](https://en.wikipedia.org/wiki/Percent-encoding)
+ - [MDN](https://developer.mozilla.org/en-US/docs/Glossary/percent-encoding)
+
+## Push-pull notifications
+
+You can use our Push-Pull-Notification Service (PPNS) to receive notifications of new messages from the NCTS as follows:
+
+* if your endpoint is hosted by Amazon Web Services (AWS), you must use either [edge-optimised custom domain names](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-edge-optimized-custom-domain-name.html) or [regional custom domain names](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html)
+* you will receive a push notification each time when there is a new message for you to read
+* for messages less than 100KB, a push notification will contain the message body
+* a push notification will have a field containing the message URI
+* you can use this URI to download the XML message from the CTC Traders API
+
+Using this functionality means that you can avoid polling for new messages and thus save time and resources.
+
+## Message flow diagrams
 
 The following diagrams show the expected order of messages that can be sent and received.
 
@@ -158,14 +225,14 @@ The following diagram shows the messages that the office of destination receives
    - If manual Border Force intervention takes place, NCTS sends an IE043 unloading permission message. (Go to step 3.)
 6. After NCTS sends an IE025 goods release notification message, NCTS sends an IE045 to the office of departure for the transit movement.
 
-## NCTS Message Details
+## NCTS message details
 
-### XSD - XML Schema Definition
+### XSD - XML schema definition
 The API uses XSD templates to validate all the Information Exchange (IE) messages that come into the system.
 
 If there's any problems, the IE message will be rejected with a 400 BadRequest status which will contain an explanation of the problem.
 
-### Information Exchange messages
+### Information exchange messages
 These are standard messages sent to and received from NCTS.
 
 Details of the IE messages valid for use in the CTC Traders API are available in the TIS.
@@ -282,7 +349,7 @@ You can ignore this field.
 
 Use our XSD files to validate your XML. You should note you must not include the MesSenMES3 XML element when sending your message to our API. Our system will automatically populate that data element for you.
 
-## Example XML Requests
+## Example XML requests
 
 [Postman Scripts](https://github.com/hmrc/common-transit-convention-traders-postman/tree/main/Collections)
 
@@ -382,13 +449,13 @@ If you are still using EDIFACT, you will need to know how to translate from EDIF
         <td>JSON and IE XML</td>
     </tr>
 </table>
-### Payloads Comparison
+### Payloads comparison
 The diagrams show the difference between the current EDIFACT and XML payloads for GET and POST messages.
 
 ![Post Message](/figures/post-message.png)
 ![Get Message](/figures/get-message.png)
 
-## Get Support
+## Get support
 
 Before you get in touch, find out if there are any planned API downtime or technical issues by checking:
 
@@ -400,9 +467,3 @@ If you have specific questions about the CTC Traders API, get in touch with our 
 You’ll get an initial response in 2 working days.
 
 Email us your questions to [SDSTeam@hmrc.gov.uk](mailto:SDSTeam@hmrc.gov.uk). We might ask for more detailed information when we respond.
-
-**Useful Links**
-
- - [CTC Traders API service roadmap](/roadmaps/common-transit-convention-traders-roadmap/)
- - [CTC Traders API documentation](/api-documentation/docs/api/service/common-transit-convention-traders/1.0)
- - [CTC Traders API Testing Guide](/guides/ctc-traders-phase4-testing-guide/)
