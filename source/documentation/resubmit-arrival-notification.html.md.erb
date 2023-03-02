@@ -1,0 +1,13 @@
+---
+title: Resubmit arrival notification | CTC Traders API phase 4 service guide
+weight: 8
+description: Software developers, designers, product owners or business analysts. Send departure and arrival movement notifications to the NCTS.
+---
+
+# Resubmit arrival notification
+
+Use the PUT endpoint [Resubmit an arrival notification message](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/common-transit-convention-traders/1.0/oas/page#tag/Arrivals/operation/postArrivalNotificationMessage) to resend a notification to the customs office of destination that a transit movement has arrived at its final destination.
+
+This request is also called an 'Arrival Notification' E_ARR_NOT (IE007) message. A successful response will contain a URI and an arrival ID for the notification, which you can use to get the message status.
+
+To resubmit an arrival notification, you must have an EORI number.

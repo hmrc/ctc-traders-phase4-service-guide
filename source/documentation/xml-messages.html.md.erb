@@ -1,0 +1,185 @@
+---
+title: XML messages | CTC Traders API phase 4 service guide
+weight: 2
+description: Software developers, designers, product owners or business analysts. Send departure and arrival movement notifications to the NCTS.
+---
+
+# XML messages
+
+## NCTS message details
+
+### XSD - XML schema definition
+
+The API uses XSD templates to validate all the Information Exchange (IE) messages that come into the system.
+
+If there's any problems, the IE message will be rejected with a 400 Bad Request status which will contain an explanation of the problem.
+
+### Information exchange messages
+
+These are standard messages sent to and received from the NCTS.
+
+Details of the IE messages valid for use in the CTC Traders API are available in the TIS.
+
+See some examples below.
+
+## XSDs for POST messages
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/hmrc/common-transit-convention-traders/blob/master/conf/xsd/cc007a.xsd">Arrival notification message CC007A (IE007)</a></td>
+        <td>Message type sent by the trader to the office of departure containing an arrival notification</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/hmrc/common-transit-convention-traders/blob/master/conf/xsd/cc014a.xsd">Declaration data cancellation request CC014A (IE014)</a></td>
+        <td>Message type sent by the trader to the office of departure containing a cancellation request</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/hmrc/common-transit-convention-traders/blob/master/conf/xsd/cc015b.xsd">Declaration data message CC015B (IE015)</a></td>
+        <td>Message type sent by the trader to the office of departure to indicate that they would like to start a movement</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/hmrc/common-transit-convention-traders/blob/master/conf/xsd/cc044a.xsd">Unloading remarks message CC044A (IE044)</a></td>
+        <td>Message type sent by the trader to the office at destination to let them know that the goods have been unloaded (IE044)</td>
+    </tr>
+</table>
+
+## XSDs for GET arrivals messages
+
+<table>
+<tr>
+    <th>Title</th>
+    <th>Description</th>
+</tr>
+<tr>
+    <td><a href="https://github.com/hmrc/transit-movements-trader-at-destination/blob/master/conf/xsd/CC008A.xsd">Arrival notification rejection message CC008A (IE008)</a></td>
+    <td>Message type received by the trader from the office of destination rejecting the trader's arrival notification (IE007)</td>
+</tr>
+<tr>
+    <td><a href="https://github.com/hmrc/transit-movements-trader-at-destination/blob/master/conf/xsd/CC025A.xsd">Goods release notification CC025A (IE025)</a></td>
+    <td>Message type received by the trader at destination from the office at destination stating that they can release the goods</td>
+</tr>
+<tr>
+    <td><a href="https://github.com/hmrc/transit-movements-trader-at-destination/blob/master/conf/xsd/CC043A.xsd">Unloading permission message CC043A (IE043)</a></td>
+    <td>Message type received by the trader at destination from the office at destination stating that they have permission to unload</td>
+</tr>
+<tr>
+    <td><a href="https://github.com/hmrc/transit-movements-trader-at-destination/blob/master/conf/xsd/CC058A.xsd">Unloading remarks rejection message CC058A (IE058)</a></td>
+    <td>Message type received by the trader at destination from the office at destination stating that there are errors in the trader’s unloading remarks message (IE044)</td>
+</tr>
+</table>
+
+
+## XSDs for GET departures messages
+
+<table>
+<tr>
+    <th>Title</th>
+    <th>Description</th>
+</tr>
+<tr>
+    <td><a href="https://github.com/hmrc/transits-movements-trader-at-departure/blob/master/conf/xsd/CC009A.xsd">Cancellation decision message CC009A (IE009)</a></td>
+    <td>Message type received by the trader from the office at departure in reference to a cancellation request (IE014)</td>
+</tr>
+<tr>
+    <td><a href="https://github.com/hmrc/transits-movements-trader-at-departure/blob/master/conf/xsd/CC016A.xsd">Declaration rejection message CC016A (IE016)</a></td>
+    <td>Message type received from the office at departure to the trader at departure rejecting a Declaration data message (IE015)</td>
+</tr>
+<tr>
+    <td><a href="https://github.com/hmrc/transits-movements-trader-at-departure/blob/master/conf/xsd/CC028A.xsd">MRN allocated message CC028A (IE028)</a></td>
+    <td>Message type received from the office at departure to the trader at departure allocating a Movement Reference Number (MRN)</td>
+</tr>
+<tr>
+    <td><a href="https://github.com/hmrc/transits-movements-trader-at-departure/blob/master/conf/xsd/CC029B.xsd">Goods released for transit CC029B (IE029)</a></td>
+    <td>Message type received from the office at departure to the trader at departure to say the goods are released for transit</td>
+</tr>
+<tr>
+    <td><a href="https://github.com/hmrc/transits-movements-trader-at-departure/blob/master/conf/xsd/CC045A.xsd">Write-off notification CC045A (IE045)</a></td>
+    <td>Message type received from the office at departure to the trader at departure to say that the transit movement is finished</td>
+</tr>
+<tr>
+    <td><a href="https://github.com/hmrc/transits-movements-trader-at-departure/blob/master/conf/xsd/CC051B.xsd">No release for transit CC051B (IE051)</a></td>
+    <td>Message type received from the office at departure to the trader at departure to say that the movement cannot be released for transit</td>
+</tr>
+<tr>
+    <td><a href="https://github.com/hmrc/transits-movements-trader-at-departure/blob/master/conf/xsd/CC055A.xsd">Guarantee not valid CC055A (IE055)</a></td>
+    <td>Message type received from the office at departure to the trader at departure to say that their guarantee is not valid</td>
+</tr>
+<tr>
+    <td><a href="https://github.com/hmrc/transits-movements-trader-at-departure/blob/master/conf/xsd/CC060A.xsd">Control decision notification CC060A (IE060)</a></td>
+    <td>Message type received from the office at departure to tell the trader at departure they wish to carry out a control of the goods</td>
+</tr>
+<tr>
+    <td><a href="https://github.com/hmrc/transits-movements-trader-at-departure/blob/master/conf/xsd/CC928A.xsd">Declaration received CC928A (IE928)</a></td>
+    <td>Message type received from NCTS of a positive acknowledgement of a departure declaration message (IE015)</td>
+</tr>
+</table>
+
+## Clarifications and omissions
+
+It should be noted there are some known omissions, which are detailed in the [mapping document](/guides/ctc-traders-phase4-testing-guide/figures/xml-2-edifact-mapping-updated12112020.pdf). These include :
+
+`NumOfLoaLisHEA304` has been included in error in:
+
+1. IE015 (CC015B)
+2. IE029 (CC029B)
+3. IE043 (CC043A)
+4. IE051 (CC051)
+
+You can ignore this field.
+
+**MesSenMES3**
+
+Use our XSD files to validate your XML. You should note you must not include the MesSenMES3 XML element when sending your message to our API. Our system will automatically populate that data element for you.
+
+## Example XML requests
+
+If you are seeking examples of the XML, you can find [Postman scripts](https://github.com/hmrc/common-transit-convention-traders-postman/tree/main/Collections) on GitHub. To use the XML directly, use Postman or you can also refer to all four XML examples.
+
+[cURL commands](https://github.com/hmrc/common-transit-convention-traders-postman/tree/main/Curl%20commands) simulate your software application’s actions and messages, and those that come back from NCTS. You will need these to test your software.
+
+## Migrating from EDIFACT to XML
+
+If you are still using EDIFACT, review this [mapping document](/guides/ctc-traders-phase4-testing-guide/figures/xml-2-edifact-mapping-updated12112020.pdf) (PDF) to learn how to convert EDIFACT and XML versions of movement messages into the other format of messages. This will help you get ready to use our CTC Traders API.
+
+### Comparison between the existing and the new API
+
+This table shows how the API uses different coding compared to the existing NCTS XML API.
+
+<table>
+    <tr>
+        <th>Activity</th>
+        <th>NCTS XML API</th>
+        <th>CTC Traders API</th>
+    </tr>
+    <tr>
+        <td>Submit Arrival Notification (IE007)</td>
+        <td>SOAP authorisation (includes username and password in clear text)</td>
+        <td>Government Gateway authorisation (OAuth 2.0 token)</td>
+    </tr>
+    <tr>
+        <td>Create action</td>
+        <td>SOAP wrapper, with embedded instruction</td>
+        <td>RESTful interface, action inferred from the URL</td>
+    </tr>
+    <tr>
+        <td>POST API Payload</td>
+        <td>SOAP with EDIFACT body</td>
+        <td>Information Exchange message (IE) XML</td>
+    </tr>
+    <tr>
+        <td>GET API Payload</td>
+        <td>SOAP with EDIFACT body</td>
+        <td>JSON and IE XML</td>
+    </tr>
+</table>
+
+### Payloads comparison
+
+These diagrams show the difference between the current EDIFACT and XML payloads for GET and POST requests.
+
+![Post Message](/figures/post-message.png)
+![Get Message](/figures/get-message.png)
