@@ -23,6 +23,22 @@ The API endpoints relate only to Great Britain and Northern Ireland. You can als
 
 This version of the CTC Traders API supports only NCTS phase 4. [CTC Traders API v2.0](/api-documentation/docs/api/service/common-transit-convention-traders/2.0) supports only NCTS phase 5.
 
+## Legacy CTC enrolments
+
+NCTS phase 5 is due to go live during November 2023 and **a legacy Common Transit Convention (CTC) enrolment will not be accepted on phase 5**, so obtaining a new CTC enrolment is a mandatory requirement. A legacy CTC enrolment is an enrolment for phase 3 or earlier of the NCTS.
+
+**Deadline:** Traders must migrate from CTC enrolments before 31 March 2023.
+
+**There is no upgrade path from phase 3 or earlier to phase 5.** Instead, if traders have not already done so, they must first upgrade to phase 4.
+
+To get a new CTC enrolment for phases 4 and 5, traders must complete the following steps:
+
+1. [Get a new Electronic Customs Clearance (ECC) enrolment](https://www.gov.uk/government/publications/new-computerised-transit-system-ncts-how-to-register-and-enrol).
+2. [Get an EORI number](https://www.gov.uk/eori) (if needed).
+3. Start using only your new CTC enrolment for making all of your customs declarations.
+
+[Contact the NCTS Helpdesk](https://www.gov.uk/government/organisations/hm-revenue-customs/contact/new-computerised-transit-system-enquiries) if you need any help or advice when using the NCTS.
+
 ## Quick start
 Learn how to get started with the CTC Traders API.
 
