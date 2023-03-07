@@ -1,10 +1,10 @@
 ---
-title: CTC Traders phase 4 service guide
+title: CTC Traders API phase 4 service guide
 weight: 1
 description: Software developers, designers, product owners or business analysts. Send departure and arrival movement notifications to the NCTS.
 ---
 
-# CTC Traders phase 4 service guide
+# CTC Traders API phase 4 service guide
 
 Learn how to use [CTC Traders API v1.0](/api-documentation/docs/api/service/common-transit-convention-traders/1.0) with your software.
 
@@ -27,7 +27,7 @@ This version of the CTC Traders API supports only NCTS phase 4. [CTC Traders API
 
 NCTS phase 5 is due to go live during November 2023 and **a legacy Common Transit Convention (CTC) enrolment will not be accepted on phase 5**, so obtaining a new CTC enrolment is a mandatory requirement. A legacy CTC enrolment is an enrolment for phase 3 or earlier of the NCTS.
 
-**Deadline:** Traders must migrate from CTC enrolments before 31 March 2023.
+**Deadline:** Traders must migrate from legacy CTC enrolments before 31 March 2023.
 
 **There is no upgrade path from phase 3 or earlier to phase 5.** Instead, if traders have not already done so, they must first upgrade to phase 4.
 
