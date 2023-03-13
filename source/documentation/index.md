@@ -23,13 +23,13 @@ The API endpoints relate only to Great Britain and Northern Ireland. You can als
 
 This version of the CTC Traders API supports only NCTS phase 4. [CTC Traders API v2.0](/api-documentation/docs/api/service/common-transit-convention-traders/2.0) supports only NCTS phase 5.
 
-## Legacy CTC enrolments
+## Trader CTC enrolments
 
-NCTS phase 5 is due to go live during November 2023 and **a legacy Common Transit Convention (CTC) enrolment will not be accepted on phase 5**, so obtaining a new CTC enrolment is a mandatory requirement. A legacy CTC enrolment is an enrolment for phase 3 or earlier of the NCTS.
+NCTS phase 5 is due to go live during November 2023 and a legacy Common Transit Convention (CTC) enrolment will not be accepted on phase 5, so obtaining a new CTC enrolment is a mandatory requirement. A legacy CTC enrolment is an enrolment for phase 3 or earlier of the NCTS.
 
 **Deadline:** Traders must migrate from legacy CTC enrolments before 31 March 2023.
 
-**There is no upgrade path from phase 3 or earlier to phase 5.** Instead, if traders have not already done so, they must first upgrade to phase 4.
+There is no upgrade path from phase 3 or earlier to phase 5. Instead, if traders have not already done so, they must first upgrade to phase 4.
 
 To get a new CTC enrolment for phases 4 and 5, traders must complete the following steps:
 
@@ -39,46 +39,24 @@ To get a new CTC enrolment for phases 4 and 5, traders must complete the followi
 
 [Contact the NCTS Helpdesk](https://www.gov.uk/government/organisations/hm-revenue-customs/contact/new-computerised-transit-system-enquiries) if you need any help or advice when using the NCTS.
 
-## Quick start
-Learn how to get started with the CTC Traders API.
+## Getting started
+If you are new to the NCTS, you should:
 
-If you are new to the NCTS, you should review all of this document before reviewing other documents for phase 4. If you are migrating from an earlier NCTS phase to phase 4, you should review this section at least before reviewing other documents for phase 4.
+1. Review all of this document before reviewing other documents for phase 4.
+2. Review [Trader data](#trader-data).
+3. Follow all of the steps in [Before you start](#before-you-start).
+4. Review [Making API requests](#making-api-requests).
 
-### Before you start
+If you are migrating from an earlier NCTS phase to phase 4, you should:
 
-Before you start using the CTC Traders API, you should:
+1. Review this section at least before reviewing other documents for phase 4.
+2. Check whether [Trader data](#trader-data) applies to any traders you serve - any traders impacted will need to take action.
+3. Follow any steps in [Before you start](#before-you-start) that apply to you.
+4. Review [Making API requests](#making-api-requests).
 
-- ensure that you have an HMRC [developer account](/developer/login) - if you don’t have one, you must [register for an account](/developer/registration), activate it by email, and sign in
+### Trader data
 
-- add your subscription to this API to your application
-
-- learn about the user-restricted [authentication](/api-documentation/docs/authorisation/user-restricted-endpoints) used by the API  
-
-- [create an application](/developer/applications/) in our sandbox environment
-
-- use the [Create Test User API](/api-documentation/docs/api/service/api-platform-test-user/1.0) to create one or more test users for your sandbox application
-
-- download [NCTS-P4 reference data](https://ec.europa.eu/taxation_customs/dds2/rd/rd_download_home.jsp?Lang=en) that can be used for testing
-
-- read the [testing guide](/guides/ctc-traders-phase4-testing-guide/) to check that your software is compatible with this version of the API and to learn how to test your application in the sandbox environment
-
-- download these files:
-
-   - [XSD zip file](/figures/ctc-traders-api-xsds.zip) (file unzips and downloads)
-
-   - [Postman collections of example API calls and cURL commands](https://github.com/hmrc/common-transit-convention-traders-postman) - if you want to use the XML files directly, you can extract these from the Postman collections link
-
-
-### Production environment requirements
-
-Before you can use the production environment for the CTC Traders API, you must:
-
-- complete the [CTC Traders API Application for Production Credentials Checklist](https://developer.service.hmrc.gov.uk/guides/ctc-traders-phase4-testing-guide/figures/CTC_Traders_API_Application_for_Productions_Credentials_v0.1_Aug22.docx) (Microsoft Word document)
-- use your [developer account](/developer/login) to apply for production credentials
-
-### Get your customers ready
-
-If you work for as software house, each trader you serve must use the [Government Gateway](https://www.access.service.gov.uk/login/signin/creds) to [sign up to the CTC Traders API](https://www.tax.service.gov.uk/customs-enrolment-services/ctc/subscribe?_gl=1*itulmt*_ga*MjA2MDk0MTQyMi4xNjY3Mzk2ODM5*_ga_Y4LWMWY6WS*MTY3NDgyMzU5OC41MS4xLjE2NzQ4NDE2NzcuMC4wLjA.&_ga=2.207635798.536493967.1674469117-2060941422.1667396839) and provide you with the following:
+If you work for a software house, each trader you serve must use the [Government Gateway](https://www.access.service.gov.uk/login/signin/creds) to [sign up to the CTC Traders API](https://www.tax.service.gov.uk/customs-enrolment-services/ctc/subscribe?_gl=1*itulmt*_ga*MjA2MDk0MTQyMi4xNjY3Mzk2ODM5*_ga_Y4LWMWY6WS*MTY3NDgyMzU5OC41MS4xLjE2NzQ4NDE2NzcuMC4wLjA.&_ga=2.207635798.536493967.1674469117-2060941422.1667396839) and provide you with the following:
 
 - GB Economic Operators Registration and Identification (EORI) number
 - VAT details (optional)
@@ -90,6 +68,35 @@ If you work for as software house, each trader you serve must use the [Governmen
   - date of company establishment
 - email address
 - contact details
+
+### Before you start
+
+Before you start using CTC Traders API v1.0, you should:
+
+1. Ensure that you have an HMRC [developer account](/developer/login) - if you do not have one, you must [register for an account](/developer/registration), activate it by email, and sign in.
+2. Add your subscription to this API to your application.
+3. Learn about the user-restricted [authentication](/api-documentation/docs/authorisation/user-restricted-endpoints) used by the API.  
+4. [Create an application](/developer/applications/) in our sandbox environment.
+5. Use the [Create Test User API](/api-documentation/docs/api/service/api-platform-test-user/1.0) to create one or more test users for your sandbox application.
+6. Download [NCTS-P4 reference data](https://ec.europa.eu/taxation_customs/dds2/rd/rd_download_home.jsp?Lang=en) that can be used for testing.
+7. Read the [testing guide](/guides/ctc-traders-phase4-testing-guide/) to check that your software is compatible with this version of the API and to learn how to test your application in the sandbox environment.
+8. Download these files:
+   - [XSD zip file](/figures/ctc-traders-api-xsds.zip) (file unzips and downloads)
+   - [Postman collections of example API calls and cURL commands](https://github.com/hmrc/common-transit-convention-traders-postman) - if you want to use the XML files directly, you can extract these from the Postman collections link
+
+### Making API requests
+
+Before sending any requests to CTC Traders API v1.0, you should ensure that you are using in your software:
+
+- the correct URL for the environment and API version number
+- the correct header contents and payload information - see [CTC Traders API v1.0 reference](/api-documentation/docs/api/service/common-transit-convention-traders/1.0/oas/page)
+
+## Applying for production credentials
+
+Before you can use the production environment for CTC Traders API v1.0, you must:
+
+1. Complete the [CTC Traders API Application for Production Credentials Checklist](https://developer.service.hmrc.gov.uk/guides/ctc-traders-phase4-testing-guide/figures/CTC_Traders_API_Application_for_Productions_Credentials_v0.1_Aug22.docx) (Microsoft Word document), which involves submitting test results that are no more than 14 days old (see [testing guide](/guides/ctc-traders-phase4-testing-guide/)).
+2. Use your [developer account](/developer/login) to apply for production credentials.
 
 ## User journeys
 
