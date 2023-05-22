@@ -21,7 +21,7 @@ The API endpoints relate only to Great Britain and Northern Ireland. You can als
 
 ## API status
 
-This version of the CTC Traders API supports only NCTS phase 4. [CTC Traders API v2.0](/api-documentation/docs/api/service/common-transit-convention-traders/2.0) supports only NCTS phase 5.
+This version of the CTC Traders API supports only NCTS4. [CTC Traders API v2.0](/api-documentation/docs/api/service/common-transit-convention-traders/2.0) supports only NCTS5.
 
 ## Trader CTC enrolments
 
@@ -38,21 +38,21 @@ To get a new CTC enrolment for NCTS4 and NCTS5, traders must complete the follow
 ## Getting started
 If you are new to the NCTS, you should:
 
-1. Review all of this document before reviewing other documents for phase 4.
+1. Review all of this document before reviewing other documents for NCTS4.
 2. Review [Trader data](#trader-data).
 3. Follow all of the steps in [Before you start](#before-you-start).
 4. Review [Making API requests](#making-api-requests).
 
-If you are migrating from an earlier NCTS phase to phase 4, you should:
+If you are migrating from an earlier NCTS phase to NCTS4, you should:
 
-1. Review this section at least before reviewing other documents for phase 4.
+1. Review this section at least before reviewing other documents for NCTS4.
 2. Check whether [Trader data](#trader-data) applies to any traders you serve - any traders impacted will need to take action.
 3. Follow any steps in [Before you start](#before-you-start) that apply to you.
 4. Review [Making API requests](#making-api-requests).
 
 ### Trader data
 
-If you work for a software house, each trader you serve must use the [Government Gateway](https://www.access.service.gov.uk/login/signin/creds) to [sign up to the CTC Traders API](https://www.tax.service.gov.uk/customs-enrolment-services/ctc/subscribe?_gl=1*itulmt*_ga*MjA2MDk0MTQyMi4xNjY3Mzk2ODM5*_ga_Y4LWMWY6WS*MTY3NDgyMzU5OC41MS4xLjE2NzQ4NDE2NzcuMC4wLjA.&_ga=2.207635798.536493967.1674469117-2060941422.1667396839) and provide you with the following:
+If you work for a software house, each trader you serve must use the [Government Gateway](https://www.access.service.gov.uk/login/signin/creds) to [sign up to the CTC Traders API](https://www.tax.service.gov.uk/customs-enrolment-services/ctc/subscribe) and provide you with the following:
 
 - GB Economic Operators Registration and Identification (EORI) number
 - VAT details (optional)
@@ -178,7 +178,7 @@ Your application must comply with [our terms of use](/api-documentation/docs/ter
 - [CTC XML API - EDIFACT to XML mapping table](/guides/ctc-traders-phase4-testing-guide/figures/xml-2-edifact-mapping-updated12112020.pdf) (PDF)
 - [Transit Manual Supplement](https://www.gov.uk/government/publications/transit-manual-supplement) - UK transit procedures (OpenDocument Text document)
 
-**Note:** The NCTS documents are technical specifications for both legacy channels and CTC Traders API, so they include some EDIFACT information in certain places for legacy channel users. CTC Traders API v1.0 uses XML and RESTful standards, so it does not use EDIFACT wrapper or SOAP, which means that you can disregard guidance about EDIFACT. Therefore, the phase 4 TIS is tailored more towards the legacy systems and not the CTC Traders API, but you must still understand its contents.
+**Note:** The NCTS documents are technical specifications for both legacy channels and CTC Traders API, so they include some EDIFACT information in certain places for legacy channel users. CTC Traders API v1.0 uses XML and RESTful standards, so it does not use EDIFACT wrapper or SOAP, which means that you can disregard guidance about EDIFACT. Therefore, the NCTS4 TIS is tailored more towards the legacy systems and not the CTC Traders API, but you must still understand its contents.
 
 ## Getting help and support
 
