@@ -17,6 +17,8 @@ Use the CTC Traders API to:
 - send departure and arrival movement notifications to the New Computerised Transit System (NCTS)
 - retrieve messages sent from customs offices of departure and destination
 
+You can use this version of the API to send messages up to 4.9MB in size. Larger messages will be rejected with an HTTP 413 (Request Entity Too Large) status code.
+
 The API endpoints relate only to Great Britain and Northern Ireland. You can also use the HMRC sandbox environment to run tests for Great Britain and Northern Ireland transit movements.
 
 ## API status
